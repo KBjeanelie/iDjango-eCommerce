@@ -3,7 +3,19 @@
 ###### DESCRIPTION OF PROJECT
 #### Ce projet consiste a réaliser une application de ecommerce qui implémente une recherche par image des produit vendu :)
 
+###### Guide pour se lancer dans le develeppement
+Tous d'abord vous devez cliquer sur le bouton Fork depuis github, ensuite créer une nouvelle branche pour que vos contributions soit prise en compte :)
+
+
+
 ###### GUIDE D'INSTALLATION
+
+
+##### 0. Cloner le projet depuis github
+```commandline
+git clone https://github.com/KBjeanelie/iDjango-eCommerce.git
+```
+NB: ensuite se rendre dans le dossier Cloner
 
 ##### 1. Installation de l'environement virtual avec python
 ```commandline

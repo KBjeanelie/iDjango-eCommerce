@@ -1,1 +1,87 @@
 LISTE DES TACHES OU FONCTIONNALITÉS À IMPLÉMENTÉ POUR L'APPLICATION
+
+
+!================== CREATION DES MODELS MODELS ========================!
+tout d'abord il faut créer un package nommé models.
+pour chaque model correspond un fichier
+    Category
+            ->label
+            ->image
+
+    Marque
+         ->label
+
+    Produit
+        ->labels
+        ->Prices
+        ->description
+        ->taille
+        ->size
+        ->quantity
+        -> category clé etrangere qui reference à la table Category
+        -> marque clé etrangère qui reference à la table Marque
+        ->images1
+        ->images2 pas obligatoire
+        ->images3 pas obligatoire
+
+    Cart
+        -> user OnetoOne
+        -> produits relation plusieur à plusieur avec la table produit
+        #methode
+            add_product : prend un produit en paramettre
+            remove_product:  prend un produit en paramettre
+
+    WhistList
+        -> user OnetoOne
+        -> produits relation plusieur à plusieur avec la table produit
+        #methode
+            add_product :  prend un produit en paramettre
+            remove_product :  prend un produit en paramettre
+            add_product_to_cart:  prend un produit en paramettre et un cart
+
+    Profile
+        -> user OneToOne à la table User de django
+        ->Address pas obligatoire
+        ->Country pas obligatoire
+        ->city pas obligatoire
+        -> sex
+        -> facebook_urls pas obligatoire
+        -> twitter_urls pas obligatoire
+        -> linkded_urls pas obligatoire
+
+
+
+!========================================= TACHE A RÉALISER CODÉ INTERFACE ADMINISTRATEUR =============================!
+- CRÉATION DES PACKAGE models, views, forms
+- CREATION DES DOSSIER templates, static
+ ---- IMPLEMENTATION DES ROUTES ----------
+    supprimer le fichier views.py
+    creer le fichier urls.py
+    implementation des vu générique dans le fichier urls
+
+- IMPLEMENTATION DES FICHIER STATIC
+- DECOUPAGE DES SITES
+- IMPLEMENTATION DE LA BASE DE DONNEE
+- IMPLEMENTATION LA METHODE AJOUT DE PRODUIT
+- LISTER LES PRODUITS
+- RECHERCHER LES PRODUITS
+- STATISTIQUE
+
+- GARDER LA PARTIE MAILBOX
+- REMOVE INTERFACE
+- SUPPRIMER BLOG
+- supprimer lock
+
+
+!========================================= TACHE A RÉALISER COTÉ SITE WEB =============================!
+- CRÉATION DES PACKAGE views, forms
+- CREATION DES DOSSIER templates, static
+ ---- IMPLEMENTATION DES ROUTES ----------
+    supprimer le fichier views.py
+    creer le fichier urls.py
+    implementation des vu générique dans le fichier urls
+    implementer toute les routes
+
+- IMPLEMENTATION DES FICHIER STATIC
+- DECOUPAGE DES SITES
+- LISTER LES PRODUITS

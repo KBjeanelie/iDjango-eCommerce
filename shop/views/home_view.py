@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 class HomeView(View):
-    template_name = 'shop/base.html'
+    template_name = 'shop/sites/index.html'
 
     def get(self, request):
         return render(request, self.template_name)

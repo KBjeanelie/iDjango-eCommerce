@@ -28,7 +28,7 @@ urlpatterns = [
     path(
         route='shop/our_services-for-you',
         view=ServicesView.as_view(),
-        name='our_services'
+        name='services'
     )
 ]
 

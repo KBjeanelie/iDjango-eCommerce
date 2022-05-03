@@ -74,15 +74,10 @@ pour chaque model correspond un fichier
 
 
 !========================================= TACHE A RÉALISER COTÉ SITE WEB =============================!
-- CRÉATION DES PACKAGE views, forms
-- CREATION DES DOSSIER templates, static
+- CRÉATION DES PACKAGE forms
  ---- IMPLEMENTATION DES ROUTES ----------
-    supprimer le fichier views.py
-    creer le fichier urls.py
-    implementation des vu générique dans le fichier urls
-    implementer toute les routes
+    70% effectuer, il reste juste les route qui concerne les produit
 
-- IMPLEMENTATION DES FICHIER STATIC
-- DECOUPAGE DES SITES
+
 - LISTER LES PRODUITS
 

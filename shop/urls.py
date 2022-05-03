@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.urls import path
 
 from shop.views.home_view import HomeView
@@ -30,3 +31,4 @@ urlpatterns = [
         name='our_services'
     )
 ]
+

@@ -1,12 +1,9 @@
 from django.contrib import admin
-from .models import Marque, Produit, Cart, WhistListCart, City, Country, Profile, Categorie
+from .models import Marque, Produit, Cart, WhistListCart, City, Country, Profile
 
 
 class AdminMarque(admin.ModelAdmin):
     search_fields= ["label_marque"]
-#################
-class AdminCategorie(admin.ModelAdmin):
-    search_fields= ["label_Categorie"]
 ################
 class AdminProduit(admin.ModelAdmin):
     list_display=('label','description','date_add','quantity','Prices')
@@ -18,7 +15,7 @@ class AdminCity(admin.ModelAdmin):
 ###############
 # Register your models here.
 
-admin.site.register(Categorie, AdminCategorie)
+
 admin.site.register(Marque, AdminMarque)
 admin.site.register(Produit, AdminProduit)
 admin.site.register(Cart)

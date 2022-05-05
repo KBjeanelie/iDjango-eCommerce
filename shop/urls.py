@@ -1,7 +1,5 @@
-from django.conf.urls.static import static
 from django.urls import path
 
-from eCommerce import settings
 from shop.views.home_view import HomeView
 from shop.views.product.shop_detail_view import ShopDetailView
 from shop.views.product.shop_view import ShopView
@@ -67,6 +65,3 @@ urlpatterns = [
         name='shop_detail'
     ),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

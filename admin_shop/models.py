@@ -16,12 +16,13 @@ class Produit(models.Model):
         ("XL", "XL"),
         ("XXL", "XXL"),
     ]
-    label = models.CharField(max_length=250,default="")
+    label = models.CharField(max_length=250)
     Prices = models.FloatField(default=0.0)
     description = models.TextField(max_length=10000,blank=True)
     size = models.CharField(max_length=50,null=False ,blank=False, choices=Taille,default="L")# taille du podruit : L,XL,X
     quantity = models.PositiveIntegerField(default=0)
-    marque= models.ForeignKey(Marque,on_delete=models.CASCADE,default="inconnu")# clé referencielle
+    date_add = models.DateTimeField(auto_now=True)
+    marque= models.ForeignKey(Marque,on_delete=models.CASCADE)# clé referencielle
     image1 = models.ImageField(blank=True)
     image2 = models.ImageField(blank=True)
     image3 = models.ImageField(blank=True)
@@ -31,31 +32,12 @@ class Produit(models.Model):
 
 # classe panier
 class Cart(models.Model):
-    list_cart =[] # a revoire
-
-    def add_product(self, a):
-        self.list_cart.append(Produit)
-
-    def remove_product(self, a):
-        self.list_cart.remove(Produit)
+    list_cart =models.ManyToManyField(Produit)
 
 
 # classe preference
 class WhistListCart(models.Model):
-    prod = []
-    # produits relation plusieur à plusieur avec la table produit
-    # methode
-    def add_product(self, a):
-        self.prod.append(a)  # prend un produit en paramettre
-
-    def remove_product(self,a):
-        self.prod.remove(a) # prend un produit en paramettre
-
-    def remove_all_product(self):
-        self.prod.clear()
-
-    def add_product_to_cart(self):
-        pass
+    prod = models.ManyToManyField(Produit)
 
 
 class Country(models.Model):
@@ -67,24 +49,24 @@ class Country(models.Model):
 
 class City(models.Model):
     name_city = models.CharField(max_length=200)
-    city_of_count = models.ForeignKey(Country, on_delete=models.CASCADE,default="inconnu")
+    name_count = models.ForeignKey(Country, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name_city
 
 # classe profile de l'utilisateur
 class Profile(models.Model):
-    name = models.CharField(max_length=200,blank=False,default="")
-    fistname = models.CharField(max_length=200,blank=False,default="")
-    Address = models.CharField(max_length=250, blank=False)
-    Country = models.ForeignKey(Country, on_delete=models.CASCADE,default="inconnu")
-    #City_of_profile = models.CharField(City, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    fistname = models.CharField(max_length=200)
+    Address = models.CharField(max_length=250)
+    name_count = models.ForeignKey(Country, on_delete=models.CASCADE)
+    name_city = models.ForeignKey(City, on_delete=models.CASCADE)
     sexe = models.TextChoices("Masculin", "Feminin")
     # -> facebook_urls pas obligatoire
     # -> twitter_urls pas obligatoire
     # -> linkded_urls pas obligatoire
     def __str__(self):
-        return self.name + self.fistname
+        return self.name
 
 
 

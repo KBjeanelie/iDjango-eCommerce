@@ -12,17 +12,18 @@ class Marque(models.Model):
 # classe produit
 class Produit(models.Model):
     Taille = [
-        ("L","L"),
+        ("L", "L"),
         ("XL", "XL"),
         ("XXL", "XXL"),
     ]
     label = models.CharField(max_length=250)
     Prices = models.FloatField(default=0.0)
-    description = models.TextField(max_length=10000,blank=True)
-    size = models.CharField(max_length=50,null=False ,blank=False, choices=Taille,default="L")# taille du podruit : L,XL,X
+    description = models.TextField(max_length=10000, blank=True)
+    size = models.CharField(max_length=50, null=False, blank=False, choices=Taille,
+                            default="L")  # taille du podruit : L,XL,X
     quantity = models.PositiveIntegerField(default=0)
     date_add = models.DateTimeField(auto_now=True)
-    marque= models.ForeignKey(Marque,on_delete=models.CASCADE)# clé referencielle
+    marque = models.ForeignKey(Marque, on_delete=models.CASCADE)  # clé referencielle
     image1 = models.ImageField(blank=True)
     image2 = models.ImageField(blank=True)
     image3 = models.ImageField(blank=True)
@@ -30,9 +31,10 @@ class Produit(models.Model):
     def __str__(self):
         return self.label
 
+
 # classe panier
 class Cart(models.Model):
-    list_cart =models.ManyToManyField(Produit)
+    list_cart = models.ManyToManyField(Produit)
 
 
 # classe preference
@@ -54,6 +56,7 @@ class City(models.Model):
     def __str__(self):
         return self.name_city
 
+
 # classe profile de l'utilisateur
 class Profile(models.Model):
     name = models.CharField(max_length=200)
@@ -62,11 +65,9 @@ class Profile(models.Model):
     name_count = models.ForeignKey(Country, on_delete=models.CASCADE)
     name_city = models.ForeignKey(City, on_delete=models.CASCADE)
     sexe = models.TextChoices("Masculin", "Feminin")
+
     # -> facebook_urls pas obligatoire
     # -> twitter_urls pas obligatoire
     # -> linkded_urls pas obligatoire
     def __str__(self):
         return self.name
-
-
-

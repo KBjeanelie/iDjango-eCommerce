@@ -53,12 +53,18 @@
     <div class="categories-shop">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="{% static 'images/t-shirts-img.jpg' %}" alt="" />
-                        <a class="btn hvr-hover" href="#">T-shirts</a>
-                    </div>
-                </div>
+                {% if categories %}
+                    {% for category in categories %}
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="shop-cat-box">
+                                <img class="img-fluid" src={{ category.image.url }} width="120px" height="120px" alt="" />
+                                <a class="btn hvr-hover" href="{{ category.get_absolut_url }}">{{ category.label_category }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class=".alert-info text-center"> No Category </p>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -98,7 +104,7 @@
                             <img src="{% static 'images/img-pro-02.jpg' %}" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="{% url 'shop:shop_detail' %}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="{% url 'shop:wishlist' %}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
                                 <a class="cart" href="#">Add to Cart</a>
@@ -121,7 +127,7 @@
                             <img src="{% static 'images/img-pro-04.jpg' %}" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
-                                    <li><a href="{% url 'shop:shop_detail' %}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="{% url 'shop:wishlist' %}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
                                 <a class="cart" href="#">Add to Cart</a>

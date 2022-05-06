@@ -23,4 +23,4 @@ class Category(models.Model):
         super(Category, self).save(*args, **kwargs)
 
     def get_absolut_url(self):
-        return reverse('library:category_detail', kwargs={'slug': self.slug})
+        return reverse('shop:category_view', kwargs={'slug': self.slug})

@@ -51,5 +51,4 @@ class Product(models.Model):
         super(Product, self).save(*args, **kwargs)
 
     def get_absolut_url(self):
-        return reverse('library:product_detail', kwargs={'slug': self.slug})
-
+        return reverse('shop:product_detail', kwargs={'slug': self.slug, 'cat_slug': self.category})

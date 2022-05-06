@@ -1,8 +1,10 @@
+from django.conf.urls.static import static
 from django.urls import path
 
+from eCommerce import settings
 from shop.views.home_view import HomeView
-from shop.views.product.shop_detail_view import ShopDetailView
-from shop.views.product.shop_view import ShopView
+from shop.views.product.product_detail_view import ProductDetailView
+from shop.views.product.category_view import CategoryListProductView
 from shop.views.product.whislist_view import WishListView
 from shop.views.sites.about_view import AboutView
 from shop.views.product.cart_view import CartView
@@ -55,13 +57,15 @@ urlpatterns = [
 
     # url for product
     path(
-        route='shop/products/get-all',
-        view=ShopView.as_view(),
-        name='products'
+        route='shop/fashion-modes/categories/<str:slug>/',
+        view=CategoryListProductView.as_view(),
+        name='category_view'
     ),
     path(
-        route='shop/products/shop-detail',
-        view=ShopDetailView.as_view(),
-        name='shop_detail'
+        route='shop/fashion-modes/categories/<str:cat_slug>/<str:slug>/',
+        view=ProductDetailView.as_view(),
+        name='product_detail'
     ),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

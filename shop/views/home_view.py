@@ -1,4 +1,6 @@
 from django.views.generic import ListView
+
+from admin_shop.models import Category
 from admin_shop.models.product import Product
 
 
@@ -9,4 +11,5 @@ class HomeView(ListView):
 
     def get_context_data(self,  **kwargs):
         context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all().order_by('label_category')
         return context

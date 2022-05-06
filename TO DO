@@ -1,72 +1,18 @@
-LISTE DES TACHES OU FONCTIONNALITÉS À IMPLÉMENTÉ POUR L'APPLICATION
-
-
-!================== CREATION DES MODELS MODELS ========================!
-tout d'abord il faut créer un package nommé models.
-pour chaque model correspond un fichier
-    Category
-            ->label
-            ->image
-
-    Marque
-         ->label
-
-    Produit
-        ->labels
-        ->Prices
-        ->description
-        ->taille
-        ->size
-        ->quantity
-        -> category clé etrangere qui reference à la table Category
-        -> marque clé etrangère qui reference à la table Marque
-        ->images1
-        ->images2 pas obligatoire
-        ->images3 pas obligatoire
-
-    Cart
-        -> user OnetoOne
-        -> produits relation plusieur à plusieur avec la table produit
-        #methode
-            add_product : prend un produit en paramettre
-            remove_product:  prend un produit en paramettre
-
-    WhistList
-        -> user OnetoOne
-        -> produits relation plusieur à plusieur avec la table produit
-        #methode
-            add_product :  prend un produit en paramettre
-            remove_product :  prend un produit en paramettre
-            add_product_to_cart:  prend un produit en paramettre et un cart
-
-    Profile
-        -> user OneToOne à la table User de django
-        ->Address pas obligatoire
-        ->Country pas obligatoire
-        ->city pas obligatoire
-        -> sex
-        -> facebook_urls pas obligatoire
-        -> twitter_urls pas obligatoire
-        -> linkded_urls pas obligatoire
-
-
-
 !========================================= TACHE A RÉALISER CODÉ INTERFACE ADMINISTRATEUR =============================!
-- CRÉATION DES PACKAGE models, views, forms
-- CREATION DES DOSSIER templates, static
  ---- IMPLEMENTATION DES ROUTES ----------
-    supprimer le fichier views.py
-    creer le fichier urls.py
-    implementation des vu générique dans le fichier urls
+- supprimer le fichier views.py
+  creer le fichier urls.py
+  implementation des vu générique dans le fichier urls
 
 - IMPLEMENTATION DES FICHIER STATIC
 - DECOUPAGE DES SITES
-- IMPLEMENTATION DE LA BASE DE DONNEE
-- IMPLEMENTATION LA METHODE AJOUT DE PRODUIT
-- LISTER LES PRODUITS
-- RECHERCHER LES PRODUITS
-- STATISTIQUE
-
+- IMPLEMENTER LES URLS DE LA PARTIE ADMINISTRATEUR DE TEL SORTE
+ON PUISSE NAVIGUER À TRAVER LES DIFFERENT PARTIE DE L'INTERFACE UTILISATEUR
+- CREATION DES DIFFERENTE FORMULAIRES À PARTIR DES DIFFERENT MODEL DE L'APP
+NB: NOMBRE MODELS  EST ÉGALE AUX NOMBRE DE FORMULAIRES
+- AJOUTER LES BOUTON QUI AURONT POUR FONCTION DE FAIRE DU CRUD (ces boutons sera appeler: ajouter, modifier, supprimer
+    et lister: donc sera à l'origine des CRUD de chaque models)
+- IMPLEMENTER LE SYSTEME D'AUTENTIFICATION, CREATION DE COMPTE ET ETABLIR UN SYSTEME DE SESSION
 - GARDER LA PARTIE MAILBOX
 - REMOVE INTERFACE
 - SUPPRIMER BLOG
@@ -74,10 +20,22 @@ pour chaque model correspond un fichier
 
 
 !========================================= TACHE A RÉALISER COTÉ SITE WEB =============================!
-- CRÉATION DES PACKAGE forms
- ---- IMPLEMENTATION DES ROUTES ----------
-    70% effectuer, il reste juste les route qui concerne les produit
-
-
-- LISTER LES PRODUITS
-
+- LISTER LES PRODUITS SELON LEUR CATEGORY
+- IMPLEMENTER UN SYSTEME DE FILTRAGE DES PRODUITS
+- IMPLEMENTER UN SYSTEME DE RECHERCHES DES PRODUITS
+- AJOUTER L'INTERFACE DU COMPTE UTILISATEUR
+- IMPLEMENTER LE SYSTEME D'AUTENTIFICATION, CREATION DE COMPTE  ET ETABLIR UN SYSTEME DE SESSION
+- IMPLEMENTATION DES DIFFERENT FONCTIONNALITÉ :
+    -> ajout des produit dans un panier
+    -> supprimer des produit dans un panier
+    -> ajout des produit dans une wishlist
+    -> supprimer des produit dans un wishlist
+- AJOUTER L'URL POUR LA PAGE CHECKOUT
+- AJOUT DU MODELS CHECKOUT ET AJOUT DE SON FORMULAIRES À PARTIR DU MODEL
+- AJOUT DU MODELS CONCTACT ET AJOUT DE SON FORMULAIRES À PARTIR DU MODEL
+- AJOUT DU MODELS CONCTACT ET IMPLEMENTER LA FONCTION QUI GÉNÈRE UNE FACTURE
+- IMPLEMENTATION DES DIFFERENT FONCTIONNALITÉ:
+    -> Enregister les informations d'un payement
+    -> Ajouter le payement par paypal
+    -> Ajouter le payement par carte avec stripe
+    -> Enregistrer les le message du contact

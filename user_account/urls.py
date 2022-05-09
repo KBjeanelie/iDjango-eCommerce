@@ -8,7 +8,7 @@ urlpatterns = [
 
     # url pour le site
     path(
-        route='sign-in',
+        route='login',
         view=LoginView.as_view(),
         name='login'
     ),

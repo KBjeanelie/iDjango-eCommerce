@@ -1,11 +1,7 @@
 !========================================= TACHE A RÉALISER CODÉ INTERFACE ADMINISTRATEUR =============================!
  ---- IMPLEMENTATION DES ROUTES ----------
-- supprimer le fichier views.py
-  creer le fichier urls.py
   implementation des vu générique dans le fichier urls
 
-- IMPLEMENTATION DES FICHIER STATIC
-- DECOUPAGE DES SITES
 - IMPLEMENTER LES URLS DE LA PARTIE ADMINISTRATEUR DE TEL SORTE
 ON PUISSE NAVIGUER À TRAVER LES DIFFERENT PARTIE DE L'INTERFACE UTILISATEUR
 - CREATION DES DIFFERENTE FORMULAIRES À PARTIR DES DIFFERENT MODEL DE L'APP
@@ -13,10 +9,8 @@ NB: NOMBRE MODELS  EST ÉGALE AUX NOMBRE DE FORMULAIRES
 - AJOUTER LES BOUTON QUI AURONT POUR FONCTION DE FAIRE DU CRUD (ces boutons sera appeler: ajouter, modifier, supprimer
     et lister: donc sera à l'origine des CRUD de chaque models)
 - IMPLEMENTER LE SYSTEME D'AUTENTIFICATION, CREATION DE COMPTE ET ETABLIR UN SYSTEME DE SESSION
-- GARDER LA PARTIE MAILBOX
 - REMOVE INTERFACE
-- SUPPRIMER BLOG
-- supprimer lock
+
 
 
 !========================================= TACHE A RÉALISER COTÉ SITE WEB =============================!

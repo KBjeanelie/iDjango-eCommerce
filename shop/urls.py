@@ -11,6 +11,7 @@ from shop.views.product.cart_view import CartView
 from shop.views.product.checkout_view import CheckoutView
 from shop.views.sites.contact_view import ContactView
 from shop.views.sites.service_view import ServicesView
+from shop.views.user_account.auth_view import LoginView, RegisterView
 
 app_name = 'shop'
 urlpatterns = [
@@ -66,6 +67,18 @@ urlpatterns = [
         view=ProductDetailView.as_view(),
         name='product_detail'
     ),
+
+    # url for authentification
+    path(
+        route='shop/user-account/sign-in/',
+        view=LoginView.as_view(),
+        name='login'
+    ),
+    path(
+        route='shop/user-account/sign-up/',
+        view=RegisterView.as_view(),
+        name='register'
+    )
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

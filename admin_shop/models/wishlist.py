@@ -5,6 +5,6 @@ from admin_shop.models.product import Product
 
 class WishList(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product)
+    products = models.ManyToManyField(Product, blank=True)
 
 

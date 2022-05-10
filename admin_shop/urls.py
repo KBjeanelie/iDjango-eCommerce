@@ -4,7 +4,7 @@ from django.urls import path
 from admin_shop.views.dashbord import DashbordView
 from eCommerce import settings
 
-app_name = 'admin_shop.py'
+app_name = 'admin_shop'
 urlpatterns = [
 
     # url pour le site

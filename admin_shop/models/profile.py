@@ -9,11 +9,11 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    Address = models.CharField(max_length=250)
+    Address = models.CharField(max_length=250, blank=True)
 
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True)
 
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, blank=True)
 
     sex = models.TextChoices("Masculin", "Féminin")
 

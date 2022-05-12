@@ -43,6 +43,7 @@ class RegisterForm(forms.ModelForm):
             "required": True
         }
     ))
+
     class Meta:
         model = User
 

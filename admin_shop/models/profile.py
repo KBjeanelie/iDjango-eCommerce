@@ -11,9 +11,9 @@ class Profile(models.Model):
 
     Address = models.CharField(max_length=250, blank=True)
 
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null=True)
 
-    city = models.ForeignKey(City, on_delete=models.CASCADE, blank=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, blank=True, null=True)
 
     sex = models.TextChoices("Masculin", "Féminin")
 
@@ -24,4 +24,4 @@ class Profile(models.Model):
     linkded_urls = models.URLField(blank=True)
 
     def __str__(self):
-        return 'profile of ' + self.user.username
+        return 'profile of ' + str(self.user)

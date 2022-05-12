@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 
 from admin_shop.backends.backend import SettingsBackend
-from shop.forms import LoginForm
+from shop.forms import LoginForm, RegisterForm
 
 
 class LoginView(View):
@@ -31,5 +31,7 @@ class LoginView(View):
 class RegisterView(View):
     template_name = 'shop/user_account/register.html'
 
-    def get(self, request):
-        return render(request, self.template_name)
+    context_object = {'register_form': RegisterForm}
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, self.context_object)

@@ -34,8 +34,18 @@ class LoginForm(forms.ModelForm):
 
 
 class RegisterForm(forms.ModelForm):
+    password2 = forms.CharField(max_length=255, widget=forms.PasswordInput(
+        attrs={
+            "type": "password",
+            "class": "form-control",
+            "id": "InputPassword",
+            "placeholder": "Confirm password",
+            "required": True
+        }
+    ))
     class Meta:
         model = User
+
         fields = ('email', 'first_name', 'last_name', 'password')
 
         widgets = {

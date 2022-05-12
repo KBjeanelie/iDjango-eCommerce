@@ -1,7 +1,6 @@
-from django.contrib.auth.models import User
 from django.db import models
-
 from admin_shop.models.product import Product
+from eCommerce.settings import User
 
 
 class Cart(models.Model):

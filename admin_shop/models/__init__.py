@@ -6,3 +6,4 @@ from admin_shop.models.product import Product
 from admin_shop.models.profile import Profile
 from admin_shop.models.wishlist import WishList
 from admin_shop.models.category import Category
+from admin_shop.models.user import UserManager, User

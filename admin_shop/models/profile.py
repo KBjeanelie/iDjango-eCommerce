@@ -1,8 +1,8 @@
-from django.contrib.auth.models import User
 from django.db import models
 
 from admin_shop.models.city import City
 from admin_shop.models.country import Country
+from eCommerce.settings import User
 
 
 class Profile(models.Model):

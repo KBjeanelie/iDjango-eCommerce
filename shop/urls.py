@@ -11,7 +11,7 @@ from shop.views.product.cart_view import CartView
 from shop.views.product.checkout_view import CheckoutView
 from shop.views.sites.contact_view import ContactView
 from shop.views.sites.service_view import ServicesView
-from shop.views.user_account.auth_view import LoginView, RegisterView
+from shop.views.user_account.auth_view import LoginView, RegisterView, LogoutView
 
 app_name = 'shop'
 urlpatterns = [
@@ -73,6 +73,11 @@ urlpatterns = [
         route='shop/user-account/sign-in/',
         view=LoginView.as_view(),
         name='login'
+    ),
+    path(
+        route='shop/user-account/auth/logout',
+        view=LogoutView.as_view(),
+        name='logout'
     ),
     path(
         route='shop/user-account/sign-up/',

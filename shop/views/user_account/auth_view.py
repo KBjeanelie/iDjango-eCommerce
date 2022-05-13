@@ -1,10 +1,19 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views import View
 
 from admin_shop.backends.backend import SettingsBackend
 from admin_shop.models import Profile, Cart, WishList, Country, City
 from shop.forms import LoginForm, RegisterForm
+
+
+class LogoutView(View):
+    template_name = 'shop/user_account/login.html'
+    context_object = {'login_form': LoginForm}
+
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return render(request, self.template_name, self.context_object)
 
 
 class LoginView(View):
@@ -66,7 +75,3 @@ class RegisterView(View):
             return redirect(to='/admin/')
 
         return redirect(to='shop:cart')
-
-
-
-

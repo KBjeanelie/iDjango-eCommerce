@@ -1,7 +1,8 @@
 from django.conf.urls.static import static
 from django.urls import path
 
-from admin_shop.views.dashbord import DashbordView
+from admin_shop.views.account_view import AdminHomeView
+from admin_shop.views.auth_view import AdminLoginView, AdminRegisterView
 from eCommerce import settings
 
 app_name = 'admin_shop'
@@ -9,9 +10,20 @@ urlpatterns = [
 
     # url pour le site
     path(
-        route='dashbord',
-        view=DashbordView.as_view(),
-        name='dashbord'
+        route='dashboard/sign-in/',
+        view=AdminLoginView.as_view(),
+        name='login'
+    ),
+    path(
+        route='dashboard/sign-up/',
+        view=AdminRegisterView.as_view(),
+        name='register'
+    ),
+
+    path(
+        route='dashboard/home',
+        view=AdminHomeView.as_view(),
+        name='home'
     ),
 
 ]

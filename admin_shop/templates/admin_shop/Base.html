@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard|Administration</title>
+    <title>Dashboard V.2 | Nalika - Material Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{% static 'admin_shop/css/font-awesome.min.css' %}">
 	<!-- nalika Icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="{% static 'admin_shop/css/nalika-icon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nalika-icon.css' %}">
     <!-- owl.carousel CSS
 		============================================ -->
     <link rel="stylesheet" href="{% static 'admin_shop/css/owl.carousel.css' %}">
@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="{% static 'admin_shop/css/calendar/fullcalendar.print.min.css' %}">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="{% static 'admin_shop/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_shop/style.css' %}">
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="{% static 'admin_shop/css/responsive.css' %}">
@@ -66,6 +66,7 @@
 </head>
 
 <body>
+
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
@@ -91,7 +92,7 @@
                         <li class="active">
                             <a class="has-arrow" href="index.html">
 								   <i class="icon nalika-home icon-wrap"></i>
-								   <span class="mini-click-non">Ecommerce</span>
+								   <span class="mini-click-non">Store</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Product List</span></a></li>
@@ -144,7 +145,9 @@
                 </div>
             </div>
         </div>
+
         {% block content %}{% endblock %}
+
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
@@ -157,7 +160,8 @@
             </div>
         </div>
     </div>
-    <!-- jquery
+
+     <!-- jquery
 		============================================ -->
     <script src="{% static 'admin_shop/js/vendor/jquery-1.12.4.min.js' %}"></script>
     <!-- bootstrap JS

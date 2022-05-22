@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from django.forms import PasswordInput, fields
+from django.forms import PasswordInput
 from django.contrib.auth import get_user_model
 
 User = get_user_model()

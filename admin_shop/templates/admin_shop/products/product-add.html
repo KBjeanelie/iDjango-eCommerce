@@ -1,0 +1,167 @@
+{% extends '../Base.html' %}
+{% load static %}
+{% block content %}
+<!-- Single pro tab start-->
+        <div class="single-product-tab-area mg-b-30">
+            <!-- Single pro tab review Start-->
+            <div class="single-pro-review-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="review-tab-pro-inner">
+                                <ul id="myTab3" class="tab-review-design">
+                                    <li class="active"><a href="#product"><i class="icon nalika-edit" aria-hidden="true"></i>Add Product</a></li>
+                                    <li><a href="#category"><i class="icon nalika-picture" aria-hidden="true"></i> Add Category</a></li>
+                                    <li><a href="#marque"><i class="icon nalika-chat" aria-hidden="true"></i> Add Marque</a></li>
+                                </ul>
+                                <div id="myTabContent" class="tab-content custom-product-edit">
+                                    <div class="product-tab-list tab-pane fade active in" id="product">
+                                        <form method="post" action="">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="review-content-section">
+                                                        <label>Product Title</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.label }}
+                                                        </div>
+
+                                                        <label>Product prices</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.prices }}
+                                                        </div>
+
+                                                        <label>Quantity</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.quantity }}
+                                                        </div>
+
+
+                                                        <label>Product size</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.size }}
+                                                        </div>
+
+                                                        <label>Product description</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.description }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="review-content-section">
+                                                        <label>Category</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="fa fa_checklist" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.category }}
+                                                        </div>
+
+                                                        <label>Marque</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.marque }}
+                                                        </div>
+
+                                                        <label>Image 1</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.image1 }}
+                                                        </div>
+
+                                                        <label>Image 2</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.image2 }}
+                                                        </div>
+
+                                                        <label>Image 3</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
+                                                            {{ product_add_form.image3 }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- SUBMIT BUTTON -->
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="text-center custom-pro-edt-ds">
+                                                        <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="product-tab-list tab-pane fade" id="category">
+                                        <form method="post" action="">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="review-content-section">
+                                                        <label>Category Title</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ category_form.label_category }}
+                                                        </div>
+
+                                                        <label>Category image</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ category_form.image }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- SUBMIT BUTTON -->
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="text-left custom-pro-edt-ds">
+                                                        <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                    <div class="product-tab-list tab-pane fade" id="marque">
+                                        <form method="post" action="">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                    <div class="review-content-section">
+                                                        <label>Marque Title</label>
+                                                        <div class="input-group mg-b-pro-edt">
+                                                            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                            {{ marque_form.label_marque }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- SUBMIT BUTTON -->
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="text-left custom-pro-edt-ds">
+                                                        <button type="submit" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Save
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

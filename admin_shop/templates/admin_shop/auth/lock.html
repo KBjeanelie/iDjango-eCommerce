@@ -1,0 +1,20 @@
+{% extends '../auth_base.html' %}
+{% load static %}
+{% block auth_content %}
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    <div class="hpanel">
+        <div class="panel-body text-center lock-inner">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <br/>
+            <h4><span class="text-success">3:43:15 PM</span> <strong>Friday, February 27, 2015</strong></h4>
+            <p>Your are in lock screen. Main app was shut down and you need to enter your passwor to go back to app.</p>
+            <form action="#" class="m-t">
+                <div class="form-group">
+                    <input type="password" required="" placeholder="******" class="form-control">
+                </div>
+                <button class="btn btn-primary block full-width" type="submit">Unlock</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

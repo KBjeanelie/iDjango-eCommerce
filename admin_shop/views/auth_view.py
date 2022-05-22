@@ -14,3 +14,10 @@ class AdminRegisterView(View):
 
     def get(self, request):
         return render(request, self.template_name)
+
+
+class AdminLockView(View):
+    template_name = 'admin_shop/auth/lock.html'
+
+    def get(self, request):
+        return render(request, self.template_name)

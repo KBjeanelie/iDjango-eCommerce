@@ -3,6 +3,8 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.forms import PasswordInput
 from django.contrib.auth import get_user_model
 
+from admin_shop.models import Profile
+
 User = get_user_model()
 
 
@@ -45,3 +47,51 @@ class UserChangeForm(forms.ModelForm):
         # This is done here, rather than on the field, because the
         # field does not have access to the initial value
         return self.initial["password"]
+
+
+class ProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ('Address', 'country', 'city', 'facebook_urls', 'twitter_urls', 'linkded_urls')
+        widgets = {
+            'Address': forms.TextInput(
+                attrs={
+                    "type": "text",
+                    "class": "form-control",
+                    "placeholder": "Enter your address",
+                }
+            ),
+            'country': forms.Select(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
+            'city': forms.Select(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
+            'twitter_urls': forms.TextInput(
+                attrs={
+                    "type": "text",
+                    "class": "form-control",
+                    "placeholder": "Enter your twitter's url",
+                }
+            ),
+            'facebook_urls': forms.TextInput(
+                attrs={
+                    "type": "text",
+                    "class": "form-control",
+                    "placeholder": "Enter your facebook's url",
+                }
+            ),
+            'linkded_urls': forms.TextInput(
+                attrs={
+                    "type": "text",
+                    "class": "form-control",
+                    "placeholder": "Enter your linkded's url",
+                }
+            ),
+
+        }

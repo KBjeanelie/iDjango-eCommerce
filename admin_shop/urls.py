@@ -1,8 +1,8 @@
 from django.conf.urls.static import static
 from django.urls import path
 
-from admin_shop.views.account_view import AdminHomeView
-from admin_shop.views.auth_view import AdminLoginView, AdminRegisterView
+from admin_shop.views.account_view import AdminHomeView, AdminProfileView
+from admin_shop.views.auth_view import AdminLoginView, AdminRegisterView, AdminLockView
 from admin_shop.views.product_view import AdminListProductView, AdminEditProductView, AdminProductDetailView, \
     AdminAddProductView
 from eCommerce import settings
@@ -21,11 +21,21 @@ urlpatterns = [
         view=AdminRegisterView.as_view(),
         name='register'
     ),
+    path(
+        route='dashboard/lock-account/',
+        view=AdminLockView.as_view(),
+        name='lock'
+    ),
 
     path(
         route='dashboard/home',
         view=AdminHomeView.as_view(),
         name='home'
+    ),
+    path(
+        route='dashboard/profile',
+        view=AdminProfileView.as_view(),
+        name='profile'
     ),
 
     # URL FOR MANAGING PRODUCT

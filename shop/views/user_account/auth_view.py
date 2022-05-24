@@ -33,8 +33,6 @@ class LoginView(View):
             return redirect(to='shop:login')
         login(request, user)
 
-        if user.is_admin:
-            return redirect(to='/admin/')
         return redirect(to='shop:cart')
 
 

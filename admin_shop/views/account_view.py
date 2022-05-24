@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 
 from admin_shop.forms.user_auth import ProfileForm
@@ -8,7 +8,10 @@ class AdminHomeView(View):
     template_name = 'admin_shop/sites/index.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        if request.user.is_authenticated:
+            return render(request, self.template_name)
+        else:
+            return redirect(to='dashboard:login')
 
 
 class AdminProfileView(View):

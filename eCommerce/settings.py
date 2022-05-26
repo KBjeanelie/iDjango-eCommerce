@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
 from django.conf.global_settings import AUTH_USER_MODEL
 from django.contrib.auth import get_user_model
 
@@ -135,4 +136,5 @@ AUTHENTICATION_BACKENDS = [
     # 'admin_shop.backends.backend.SettingsBackend'
 ]
 User = AUTH_USER_MODEL
-# USER_MODEL = get_user_model()
+
+django_heroku.settings(locals())
